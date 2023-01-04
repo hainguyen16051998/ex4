@@ -8,7 +8,7 @@ public class Leetcode202 {
         int a = 0;
         while (n != 0) {
             int temp = n % 10;
-            a = temp * temp;
+            a += temp * temp;
             n = n / 10;
         }
         n = a;
