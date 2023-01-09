@@ -1,7 +1,8 @@
 public class Leetcode13 {
     public static void main(String[] args) {
         String s = "III";
-        romanToInt(s);
+        System.out.println(romanToInt(s));
+        ;
     }
 
     public static int dich(char a) {
@@ -27,16 +28,17 @@ public class Leetcode13 {
 
     public static int romanToInt(String s) {
         int sum = 0;
-        int cur = dich(s.charAt(0));
+        int temp = dich(s.charAt(0));
 
-        for (int i = 0; i < s.length(); i++) {
+        for (int i = 1; i < s.length(); i++) {
             int next = dich(s.charAt(i));
-            if (cur < next)
-                sum -= cur;
+            if (temp < next)
+                sum -= temp;
             else
-                sum += cur;
-            cur = next;
+                sum += temp;
+            temp = next;
         }
+        sum += temp;
         return sum;
     }
 }
